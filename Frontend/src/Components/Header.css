@@ -1,0 +1,17 @@
+.header {
+
+    background-color: black;
+
+    padding: 0;
+    border: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.header-title {
+    grid-area: header-title;
+
+    color: white;
+
+    text-align: center;
+}
