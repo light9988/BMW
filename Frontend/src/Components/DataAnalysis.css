@@ -44,6 +44,7 @@ button {
     width: 10rem;
     height: 2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .graph {
