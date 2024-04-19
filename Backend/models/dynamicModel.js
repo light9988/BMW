@@ -5,13 +5,20 @@ const generateAttributes = (columnNames) => {
     const attributes = {};
     for (const columnName of columnNames) {
         attributes[columnName] = { type: DataTypes.STRING };
+        
+        if (columnName.toLowerCase().includes('number')) {
+            attributes[columnName] = { type: DataTypes.INTEGER };
+        } else if (columnName.toLowerCase().includes('float')) {
+            attributes[columnName] = { type: DataTypes.FLOAT };
+        }
     }
     return attributes;
 };
 
-const dataDynamicModel = (modelName, columnNames) => {
+
+const dynamicModel = (modelName, columnNames) => {
     const attributes = generateAttributes(columnNames);
     return sequelize.define(modelName, attributes);
 };
 
-export default dataDynamicModel;
+export default dynamicModel;
